@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merry Christmas & Happy New Year</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #fff;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .message {
+      display: none;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .hint {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 15px;
+    }
+
+    .snow {
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" onclick="playMusic()">
+    <div class="snow">❄️🎄❄️</div>
+    <div class="title">Merry Christmas</div>
+    <div class="subtitle">& Happy New Year</div>
+
+    <div class="message" id="message">
+      <p>
+        As the year comes to a close, thank you for your dedication,
+        collaboration, and leadership.
+      </p>
+      <p>
+        From building reliable data pipelines to driving meaningful,
+        data-driven decisions — your efforts truly made an impact.
+      </p>
+      <p>
+        Wishing you joy, rest, and a New Year filled with growth,
+        innovation, and success.
+      </p>
+      <p><strong>— Warm regards,</strong><br/>[Your Name]</p>
+    </div>
+
+    <div class="hint" id="hint">
+      👉 Click the card to open & play music
+    </div>
+  </div>
+
+  <!-- Christmas Music -->
+  <audio id="music">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playMusic() {
+      const music = document.getElementById("music");
+      const message = document.getElementById("message");
+      const hint = document.getElementById("hint");
+
+      if (music.paused) {
+        music.play();
+        message.style.display = "block";
+        hint.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
