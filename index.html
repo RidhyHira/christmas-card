@@ -15,7 +15,24 @@
     justify-content: center;
     color: #fff;
     overflow: hidden;
-    background: linear-gradient(135deg, #0b3d2e, #145a32, #1e8449);
+    /* Background image from GitHub */
+    background-image: url('https://github.com/RidhyHira/christmas-card/raw/master/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Optional: Add a subtle overlay for better text readability */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    z-index: 0;
   }
 
   /* Snowflake container - BEHIND everything */
@@ -73,44 +90,84 @@
     animation-timing-function: linear;
   }
 
-  /* Snowflake positioning and delays */
+  /* Snowflake positioning and delays - Increased to 30 snowflakes */
   .snowflake:nth-child(1) { left: 1%; animation-delay: 0s }
   .snowflake:nth-child(1) .inner { animation-delay: 0s }
-  .snowflake:nth-child(2) { left: 10%; animation-delay: 1s }
+  .snowflake:nth-child(2) { left: 3%; animation-delay: 1s }
   .snowflake:nth-child(2) .inner { animation-delay: 1s }
-  .snowflake:nth-child(3) { left: 20%; animation-delay: 0.5s }
+  .snowflake:nth-child(3) { left: 5%; animation-delay: 0.5s }
   .snowflake:nth-child(3) .inner { animation-delay: 6s }
-  .snowflake:nth-child(4) { left: 30%; animation-delay: 2s }
+  .snowflake:nth-child(4) { left: 7%; animation-delay: 2s }
   .snowflake:nth-child(4) .inner { animation-delay: 4s }
-  .snowflake:nth-child(5) { left: 40%; animation-delay: 2s }
+  .snowflake:nth-child(5) { left: 10%; animation-delay: 2s }
   .snowflake:nth-child(5) .inner { animation-delay: 2s }
-  .snowflake:nth-child(6) { left: 50%; animation-delay: 3s }
+  .snowflake:nth-child(6) { left: 15%; animation-delay: 3s }
   .snowflake:nth-child(6) .inner { animation-delay: 8s }
-  .snowflake:nth-child(7) { left: 60%; animation-delay: 2s }
+  .snowflake:nth-child(7) { left: 20%; animation-delay: 2s }
   .snowflake:nth-child(7) .inner { animation-delay: 6s }
-  .snowflake:nth-child(8) { left: 70%; animation-delay: 1s }
+  .snowflake:nth-child(8) { left: 25%; animation-delay: 1s }
   .snowflake:nth-child(8) .inner { animation-delay: 2.5s }
-  .snowflake:nth-child(9) { left: 80%; animation-delay: 0s }
+  .snowflake:nth-child(9) { left: 30%; animation-delay: 0s }
   .snowflake:nth-child(9) .inner { animation-delay: 1s }
-  .snowflake:nth-child(10) { left: 90%; animation-delay: 1.5s }
+  .snowflake:nth-child(10) { left: 35%; animation-delay: 1.5s }
   .snowflake:nth-child(10) .inner { animation-delay: 3s }
-  .snowflake:nth-child(11) { left: 25%; animation-delay: 0s }
+  .snowflake:nth-child(11) { left: 40%; animation-delay: 0s }
   .snowflake:nth-child(11) .inner { animation-delay: 2s }
-  .snowflake:nth-child(12) { left: 65%; animation-delay: 2.5s }
+  .snowflake:nth-child(12) { left: 45%; animation-delay: 2.5s }
   .snowflake:nth-child(12) .inner { animation-delay: 4s }
+  .snowflake:nth-child(13) { left: 50%; animation-delay: 1s }
+  .snowflake:nth-child(13) .inner { animation-delay: 5s }
+  .snowflake:nth-child(14) { left: 55%; animation-delay: 0.5s }
+  .snowflake:nth-child(14) .inner { animation-delay: 7s }
+  .snowflake:nth-child(15) { left: 60%; animation-delay: 2s }
+  .snowflake:nth-child(15) .inner { animation-delay: 3s }
+  .snowflake:nth-child(16) { left: 65%; animation-delay: 1s }
+  .snowflake:nth-child(16) .inner { animation-delay: 6s }
+  .snowflake:nth-child(17) { left: 70%; animation-delay: 0s }
+  .snowflake:nth-child(17) .inner { animation-delay: 4s }
+  .snowflake:nth-child(18) { left: 75%; animation-delay: 1.5s }
+  .snowflake:nth-child(18) .inner { animation-delay: 2s }
+  .snowflake:nth-child(19) { left: 80%; animation-delay: 2s }
+  .snowflake:nth-child(19) .inner { animation-delay: 5s }
+  .snowflake:nth-child(20) { left: 85%; animation-delay: 0.5s }
+  .snowflake:nth-child(20) .inner { animation-delay: 8s }
+  .snowflake:nth-child(21) { left: 90%; animation-delay: 1s }
+  .snowflake:nth-child(21) .inner { animation-delay: 3s }
+  .snowflake:nth-child(22) { left: 93%; animation-delay: 2s }
+  .snowflake:nth-child(22) .inner { animation-delay: 6s }
+  .snowflake:nth-child(23) { left: 95%; animation-delay: 0s }
+  .snowflake:nth-child(23) .inner { animation-delay: 4s }
+  .snowflake:nth-child(24) { left: 97%; animation-delay: 1.5s }
+  .snowflake:nth-child(24) .inner { animation-delay: 2s }
+  .snowflake:nth-child(25) { left: 8%; animation-delay: 2s }
+  .snowflake:nth-child(25) .inner { animation-delay: 7s }
+  .snowflake:nth-child(26) { left: 18%; animation-delay: 1s }
+  .snowflake:nth-child(26) .inner { animation-delay: 5s }
+  .snowflake:nth-child(27) { left: 28%; animation-delay: 0.5s }
+  .snowflake:nth-child(27) .inner { animation-delay: 9s }
+  .snowflake:nth-child(28) { left: 38%; animation-delay: 2s }
+  .snowflake:nth-child(28) .inner { animation-delay: 4s }
+  .snowflake:nth-child(29) { left: 48%; animation-delay: 1s }
+  .snowflake:nth-child(29) .inner { animation-delay: 6s }
+  .snowflake:nth-child(30) { left: 58%; animation-delay: 0s }
+  .snowflake:nth-child(30) .inner { animation-delay: 3s }
 
   /* Card - ABOVE snowflakes */
   .card {
     position: relative;
     width: 90%;
     max-width: 520px;
-    background: linear-gradient(135deg, #b11212, #c81d25, #e63946);
+    /* Semi-transparent version of #973B52 (RGB: 151, 59, 82) */
+    background: rgba(151, 59, 82, 0.6); /* 0.8 = 80% opacity */
+    backdrop-filter: blur(10px); /* Adds frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
     border-radius: 26px;
     padding: 36px 30px;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    border: 2px solid rgba(255,215,102,0.65);
+    /* Changed border color from gold to #3B9780 (teal/green) */
+    border: 2px solid #3B9780;
     z-index: 2; /* Higher than snowflakes */
     transition: transform 0.3s ease;
   }
@@ -159,8 +216,24 @@
 <body>
 <!-- Snowflakes container (behind everything) -->
 <div class="snowflakes" aria-hidden="true">
+  <!-- Snowflakes ❅ -->
   <div class="snowflake">
     <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🪩</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -169,7 +242,16 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
+  </div>
+  <div class="snowflake">
     <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🪩</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -178,7 +260,16 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
+  </div>
+  <div class="snowflake">
+    <div class="inner">🪩</div>
+  </div>
+  <div class="snowflake">
     <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -187,10 +278,28 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
+  </div>
+  <div class="snowflake">
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">🎁</div> <!-- Gift emoji -->
+  </div>
+  <div class="snowflake">
+    <div class="inner">🪩</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
