@@ -49,7 +49,7 @@
   /* customizable snowflake styling */
   .snowflake {
     color: #fff;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-family: Arial, sans-serif;
     text-shadow: 0 0 5px #000;
     position: fixed; /* Changed from absolute to fixed */
@@ -158,7 +158,7 @@
     width: 90%;
     max-width: 520px;
     /* Semi-transparent version of #973B52 (RGB: 151, 59, 82) */
-    background: rgba(151, 59, 82, 0.6); /* 0.8 = 80% opacity */
+    background: rgba(151, 59, 82, 0.6);
     backdrop-filter: blur(10px); /* Adds frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari support */
     border-radius: 26px;
@@ -210,10 +210,57 @@
     font-weight: 600;
     color: #ffd166;
   }
+
+  /* Confetti styles */
+  .confetti {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background-color: #f00;
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  /* Music control button */
+  .music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(151, 59, 82, 0.8);
+    color: white;
+    border: 2px solid #3B9780;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+
+  .music-control:hover {
+    background: rgba(151, 59, 82, 1);
+    transform: scale(1.1);
+  }
 </style>
 </head>
 
 <body>
+<!-- Background music (autoplay muted for autoplay restrictions) -->
+<audio id="backgroundMusic" loop>
+  <source src="https://github.com/RidhyHira/christmas-card/raw/master/background_music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Music control button -->
+<div class="music-control" id="musicToggle" onclick="toggleMusic()">
+  🔇
+</div>
+
 <!-- Snowflakes container (behind everything) -->
 <div class="snowflakes" aria-hidden="true">
   <!-- Snowflakes ❅ -->
@@ -224,16 +271,10 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🪩</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
-  </div>
-  <div class="snowflake">
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
+    <div class="inner">❅</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -242,16 +283,10 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
-  </div>
-  <div class="snowflake">
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🪩</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
+    <div class="inner">❅</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -260,16 +295,10 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
-  </div>
-  <div class="snowflake">
-    <div class="inner">🪩</div>
-  </div>
-  <div class="snowflake">
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
+    <div class="inner">❅</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -278,7 +307,10 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -287,19 +319,7 @@
     <div class="inner">❅</div>
   </div>
   <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
-  </div>
-  <div class="snowflake">
     <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">🎁</div> <!-- Gift emoji -->
-  </div>
-  <div class="snowflake">
-    <div class="inner">🪩</div>
   </div>
   <div class="snowflake">
     <div class="inner">❅</div>
@@ -314,20 +334,17 @@
 
   <div class="message" id="message">
     <p>
-      As the year comes to a close, thank you for your dedication,
-      collaboration, and leadership.
+      As we wrap up this year, I want to express my heartfelt gratitude for your leadership and guidance throughout this year.  
+      Working alongside you has been an incredible learning experience for me.
+      Thank you for making the workplace feel so welcoming and for sharing your wisdom so generously. 
     </p>
     <p>
-      From building reliable data pipelines to enabling meaningful,
-      data-driven decisions — your efforts truly made an impact.
-    </p>
-    <p>
-      Wishing you a festive season filled with joy and a New Year
-      full of growth, innovation, and success.
+      Wishing you a wonderful holiday season filled with relaxation and joy, and a 
+      New Year ahead that brings you health, happiness, and all the wonderful things you deserve!
     </p>
     <div class="signature">
       — Warm regards,<br/>
-      [Your Name]
+      Ridhy Pratim Hira
     </div>
   </div>
 
@@ -337,10 +354,113 @@
 </div>
 
 <script>
+  // Audio elements
+  const backgroundMusic = document.getElementById('backgroundMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  
+  // Try to play music automatically (with user interaction requirement)
+  document.addEventListener('click', function initialPlay() {
+    backgroundMusic.play().then(() => {
+      musicToggle.textContent = '🔊';
+    }).catch(error => {
+      console.log("Autoplay prevented. User needs to interact first.");
+    });
+    document.removeEventListener('click', initialPlay);
+  });
+
+  // Toggle music function
+  function toggleMusic() {
+    if (backgroundMusic.paused) {
+      backgroundMusic.play();
+      musicToggle.textContent = '🔊';
+    } else {
+      backgroundMusic.pause();
+      musicToggle.textContent = '🔇';
+    }
+  }
+
+  // Confetti colors
+  const confettiColors = [
+    '#EF5350', '#E57373', '#FFD166', '#3B9780', '#FF6B6B',
+    '#4ECDC4', '#FFE66D', '#1A535C', '#FF9A8B', '#A8E6CF'
+  ];
+
+  // Confetti shapes
+  const confettiShapes = ['🎄', '🎁', '⭐', '❄️', '🎅', '🔔'];
+
+  // Open card function with confetti
   function openCard() {
     document.getElementById("message").style.display = "block";
     document.getElementById("hint").style.display = "none";
+    
+    // Create confetti explosion
+    createConfetti();
+    
+    // Play a little "pop" sound if we had one (optional)
+    // For now, we'll just use the background music
   }
+
+  // Create confetti effect
+  function createConfetti() {
+    const confettiCount = 100;
+    
+    for (let i = 0; i < confettiCount; i++) {
+      // Create confetti element
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      
+      // Randomly choose between shape or colored square
+      if (Math.random() > 0.5) {
+        // Emoji shape
+        confetti.textContent = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
+        confetti.style.fontSize = Math.random() * 20 + 15 + 'px';
+        confetti.style.background = 'transparent';
+        confetti.style.width = 'auto';
+        confetti.style.height = 'auto';
+      } else {
+        // Colored square
+        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      }
+      
+      // Random position
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = Math.random() * 100 + 'vh';
+      
+      // Random rotation
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+      
+      // Add to body
+      document.body.appendChild(confetti);
+      
+      // Animation
+      const animationDuration = Math.random() * 3 + 2; // 2-5 seconds
+      
+      // Animate confetti
+      const keyframes = [
+        { 
+          transform: `translateY(0px) rotate(0deg)`,
+          opacity: 1 
+        },
+        { 
+          transform: `translateY(${Math.random() * 300 + 100}px) translateX(${Math.random() * 200 - 100}px) rotate(${Math.random() * 720}deg)`,
+          opacity: 0 
+        }
+      ];
+      
+      const animationOptions = {
+        duration: animationDuration * 1000,
+        easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+      };
+      
+      confetti.animate(keyframes, animationOptions);
+      
+      // Remove confetti after animation
+      setTimeout(() => {
+        confetti.remove();
+      }, animationDuration * 1000);
+    }
+  }
+
 </script>
 
 </body>
